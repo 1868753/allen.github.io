@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="GBK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件上传</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <form action="upload.php" method="post" enctype="multipart/form-data" onsubmit="submitForm(event)">
+        <label for="phone">录音手机：</label>
+        <input type="text" name="phone" id="phone" placeholder="请输入录音手机" required>
+        <br>
+        <label for="mp3time">录音时长：</label>
+        <input type="text" name="mp3time" id="mp3time" placeholder="请输入录音时长" required>
+        <br>
+        <label for="file">选择文件：</label>
+        <input type="file" name="file" id="file" accept=".mp3, .wav, .mp4" required onchange="updateFileName(this)">
+        <span id="file-label">未选择文件</span>
+        <br>
+        <input type="submit" value="上传">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
